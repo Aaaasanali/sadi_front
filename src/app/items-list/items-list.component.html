@@ -29,7 +29,7 @@
                             <p class="item-name">
                                 {{item.name}}
                             </p>
-                            <div class="item-description-carrier">
+                            <div class="item-description-carrier" *ngIf="item.description">
                                 @if(!item.description){
                                     <p class="item-description">
                                         Что эт такое то блин
