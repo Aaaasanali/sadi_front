@@ -30,16 +30,9 @@
                                 {{item.name}}
                             </p>
                             <div class="item-description-carrier" *ngIf="item.description">
-                                @if(!item.description){
-                                    <p class="item-description">
-                                        Что эт такое то блин
-                                    </p>
-                                }
-                                @else{
-                                    <p class="item-description">
-                                        {{item.description}}
-                                    </p>
-                                }
+                                <p class="item-description">
+                                    {{item.description}}
+                                </p>
                             
                             </div>
                             <div class="card-footer">
