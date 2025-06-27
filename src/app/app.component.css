@@ -1,0 +1,50 @@
+.animation-body{
+    position: absolute;
+    z-index: 1001;
+
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+
+    animation: hideBody 3.2s ease forwards;
+}
+
+.logo {
+  width: 150px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: showLogo 3s ease forwards;
+}
+
+
+@keyframes showLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(5);
+  }
+}
+@keyframes hideBody{
+    0%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

@@ -1,0 +1,59 @@
+<div class="body">
+    <div class="scrollmenu-carrier">
+        <ul class="scrollmenu">
+            <div 
+              class="scrollmenu-item-carrier" 
+              *ngFor="let c of categories"
+              [class.active]="activeSection === c.trim()"
+              #menuItem
+            >
+
+              <a class="scrollmenu-item" style="color: white" href="#{{c}}">{{c}}</a>
+            </div>
+        </ul>
+    </div>
+    <div class="content">
+        <div *ngFor="let category of category_filter" class="category-list" [id]="category[0].trim()" #categorySection>
+            <p class="category-name">{{category[0]}}</p>
+            <hr>
+            <div class="item-list">
+                <div *ngFor="let item of category[1]" class="item-card">
+                    <div class="item-card-content-carrier"> 
+                        @if(!item.image){
+                            <img src="assets/images/empty.png" class="card-image">
+                        }
+                        @else{
+                            <img src="{{item.image}}" class="card-image">
+                        }
+                        <div class="item-card-content">
+                            <p class="item-name">
+                                {{item.name}}
+                            </p>
+                            <div class="item-description-carrier">
+                                @if(!item.description){
+                                    <p class="item-description">
+                                        Что эт такое то блин
+                                    </p>
+                                }
+                                @else{
+                                    <p class="item-description">
+                                        {{item.description}}
+                                    </p>
+                                }
+                            
+                            </div>
+                            <div class="card-footer">
+                                <p class="item-price">
+                                    {{item.price}} ₸
+                                </p>
+                                <button mat-icon-button class="add-btn" aria-label="Add new task">
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
